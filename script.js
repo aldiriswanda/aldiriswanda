@@ -5,6 +5,7 @@ const  calculator = {
     operator : null,
 };
 
+
 function inputDigit(digit){
     const {displayValue, waitingForSecondOperand } = calculator;
     if (waitingForSecondOperand === true){
@@ -58,7 +59,9 @@ function calculate(firstOperand, secondOperand, operator){
     else if (operator === '/'){
         return firstOperand / secondOperand;
     }
-    return secondOperand;
+    else if (operator === '**'){
+        return firstOperand ** secondOperand;
+    }
 }
 
 function resetCalculator(){
@@ -87,9 +90,12 @@ keys.addEventListener('click', event => {
         case '*':
         case '/':
         case '=':
+        case '**':
+        
     handleOperator(value);
     break;
     case '.':
+    
     inputDecimal(value);
     break;
     case 'all-clear':
@@ -101,4 +107,17 @@ keys.addEventListener('click', event => {
         }
     }
     updateDisplay();
-});
+})
+function pangkatdua(){
+    calculator.displayValue = Math.pow(calculator.displayValue,2);
+}
+function sin(){
+	calculator.displayValue = Math.sin(calculator.displayValue);
+}
+function cos(){
+	calculator.displayValue = Math.cos(calculator.displayValue);
+}
+function tan(){
+	calculator.displayValue = Math.tan(calculator.displayValue);
+}
+;

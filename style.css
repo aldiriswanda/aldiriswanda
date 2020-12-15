@@ -57,6 +57,7 @@ button:hover {
     background-color: #f0595f;
     border-color: #b0353a;
     color: #fff;
+    grid-area : 7 / 1 / 7 / 5;
 }
 
 .all-clear:hover {
@@ -81,4 +82,3 @@ background-color: #f17377;
     grid-gap:20px;
     padding: 20px;
 }
-
